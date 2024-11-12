@@ -1,0 +1,45 @@
+body.theory {
+  .social-icons {
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+
+    a {
+      display: block;
+    }
+
+    a:nth-child(1) svg:hover g path:first-of-type {
+      fill: #2aabee;
+      transition: all 0.3s ease-out;
+    }
+    a:nth-child(2) svg:hover g path:first-of-type {
+      fill: #0077ff;
+      transition: all 0.3s ease-out;
+    }
+    a:nth-child(3) svg:hover path:first-of-type {
+      fill: #ff0302;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #888;
+    background: transparent;
+  }
+
+  .rect {
+    width: calc(90vw - 80px);
+    margin: 0 auto;
+    height: 300px;
+    background-color: goldenrod;
+  }
+  .rect2 {
+    width: calc(90vw - 80px);
+    margin: 0 auto;
+    height: calc((90vw - 80px) / 16 * 9);
+    background-color: palevioletred;
+  }
+}

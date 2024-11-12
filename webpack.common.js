@@ -9,7 +9,8 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    theory: './src/javascripts/theory.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -92,29 +93,41 @@ module.exports = {
     // Index
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      chunks: ['index']
     }),
 
     // Страницы разделов
     new HtmlWebpackPlugin({
       template: './src/articles.html',
-      filename: './articles.html'
+      filename: './articles.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       template: './src/boardgames.html',
-      filename: './boardgames.html'
+      filename: './boardgames.html',
+      chunks: ['index']
     }),
 
     // Публикации в разделе "Статьи" (articles)
     new HtmlWebpackPlugin({
       template: './src/articles/about-games.html',
-      filename: './articles/about-games.html'
+      filename: './articles/about-games.html',
+      chunks: ['index']
     }),
 
     // Публикации в разделе "Игры" (boardgames)
     new HtmlWebpackPlugin({
       template: './src/boardgames/gloomhaven.html',
-      filename: './boardgames/gloomhaven.html'
+      filename: './boardgames/gloomhaven.html',
+      chunks: ['index']
+    }),
+
+    // Pages
+    new HtmlWebpackPlugin({
+      template: './src/pages/theory.html',
+      filename: './pages/theory.html',
+      chunks: ['theory']
     }),
 
     new CopyPlugin({
