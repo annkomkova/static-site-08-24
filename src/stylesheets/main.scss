@@ -152,6 +152,15 @@
     }
   }
 }
+@media screen and (max-width: 1023px) {
+  .index {
+    .categoryGames {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+}
+
 @media screen and (max-width: 431px) {
   .index {
     .mainInfo {
