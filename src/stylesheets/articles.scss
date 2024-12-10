@@ -1,0 +1,94 @@
+.slider {
+  width: 98vw;
+  height: 50vw;
+  max-height: 450px;
+  margin: 0 auto;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 2.5rem;
+        text-decoration: none;
+        color: white;
+        border-radius: 1rem;
+        gap: 1.6rem;
+
+        .slideHeader {
+          font-size: 2rem;
+          font-weight: 600;
+          text-align: center;
+        }
+        .slideTags {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+
+          .slideTag {
+            padding: 0.6rem 1rem;
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+        }
+
+        &.firstSlide {
+          background: rgb(238, 174, 178);
+          background: radial-gradient(
+            circle,
+            rgba(238, 174, 178, 1) 0%,
+            rgba(233, 226, 148, 1) 100%
+          );
+        }
+        &.secondSlide {
+          background: rgb(174, 191, 238);
+          background: radial-gradient(
+            circle,
+            rgba(174, 191, 238, 1) 0%,
+            rgba(148, 233, 184, 1) 100%
+          );
+        }
+        &.thirdSlide {
+          background: rgb(238, 210, 174);
+          background: radial-gradient(
+            circle,
+            rgba(238, 210, 174, 1) 0%,
+            rgba(148, 169, 233, 1) 100%
+          );
+        }
+      }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      color: white;
+      /* content: ''; */
+    }
+    /* .swiper-button-next {
+      background-image: url('https://img.icons8.com/?size=100&id=BQZhpHpqdJyY&format=png&color=000000');
+    }
+    .swiper-button-prev {
+      background-image: url('https://img.icons8.com/?size=100&id=HgRhaL4CC3N0&format=png&color=000000');
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-repeat: no-repeat;
+      background-size: contain;
+    } */
+    .swiper-pagination-bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &.swiper-pagination-bullet-active {
+        background-color: white;
+      }
+    }
+  }
+}
