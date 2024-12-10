@@ -62918,9 +62918,5 @@ function initThree() {
     camera.updateProjectionMatrix();
   }
 }
-;// CONCATENATED MODULE: ./src/index.js
-
-
-console.log('Сообщение в консоль, версия 2');
 /******/ })()
 ;
