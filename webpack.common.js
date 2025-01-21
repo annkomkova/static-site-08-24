@@ -12,7 +12,8 @@ module.exports = {
     index: './src/index.js',
     theory: './src/javascripts/theory.js',
     dices: './src/javascripts/dices.js',
-    swiper: './src/javascripts/swiper.js'
+    swiper: './src/javascripts/swiper.js',
+    dictionary: './src/dictionary/dictionary.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -130,6 +131,13 @@ module.exports = {
       template: './src/pages/theory.html',
       filename: './pages/theory.html',
       chunks: ['theory']
+    }),
+
+    // ADC Dictionary
+    new HtmlWebpackPlugin({
+      template: './src/dictionary/dictionary.html',
+      filename: './dictionary/dictionary.html',
+      chunks: ['dictionary']
     }),
 
     new CopyPlugin({

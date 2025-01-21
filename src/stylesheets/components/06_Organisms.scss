@@ -1,0 +1,18 @@
+/* 
+ADC Dictionary 
+_____________________________________________________________
+*/
+
+.O_Story {
+  width: 320px;
+  height: 568px;
+  background-color: black;
+  border-radius: 10px;
+  padding: 30px 10px;
+  position: relative;
+
+  .C_AnswerMessages {
+    position: absolute;
+    bottom: 30px;
+  }
+}
