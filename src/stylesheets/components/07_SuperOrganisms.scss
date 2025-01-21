@@ -1,0 +1,19 @@
+/* 
+ADC Dictionary 
+_____________________________________________________________
+*/
+
+.S_Stories {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  /*
+  max-width: 984px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px 12px;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center; */
+}

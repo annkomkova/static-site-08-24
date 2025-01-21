@@ -1,0 +1,38 @@
+/* 
+ADC Dictionary 
+_____________________________________________________________
+*/
+.A_ADCUser {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &::before {
+    content: ' ';
+    width: 28px;
+    height: 28px;
+    background-image: url('../../images/dictionary/Q_ADCSymbol.svg');
+  }
+  &::after {
+    content: ' ';
+    width: 36px;
+    height: 24px;
+    background-image: url('../../images/dictionary/Q_ADCUserTexting.svg');
+  }
+}
+.A_Question {
+  background-color: #1a1a1a;
+  color: #79ff39;
+  border-radius: 8px;
+  width: fit-content;
+  max-width: 70%;
+  font-size: 22px;
+  padding: 12px 18px;
+}
+.A_AnswerMessage {
+  background-color: white;
+  color: black;
+  width: 218px;
+  border-radius: 8px;
+  padding: 10px 12px;
+}

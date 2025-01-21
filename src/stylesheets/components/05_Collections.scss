@@ -1,0 +1,19 @@
+/* 
+ADC Dictionary 
+_____________________________________________________________
+*/
+.C_AnswerMessages {
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .A_AnswerMessage {
+    margin-left: 34px;
+  }
+
+  .A_Question {
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+}
