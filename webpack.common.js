@@ -14,7 +14,8 @@ module.exports = {
     dices: './src/javascripts/dices.js',
     swiper: './src/javascripts/swiper.js',
     dictionary: './src/dictionary/dictionary.js',
-    jsBasic: './src/js-basic/js-basic.js'
+    jsBasic: './src/js-basic/js-basic.js',
+    tests: './src/tests/test1.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -146,6 +147,13 @@ module.exports = {
       template: './src/js-basic/js-basic.html',
       filename: './js-basic/js-basic.html',
       chunks: ['jsBasic']
+    }),
+
+    // Тесты
+    new HtmlWebpackPlugin({
+      template: './src/tests/test1.html',
+      filename: './tests/test1.html',
+      chunks: ['tests']
     }),
 
     new CopyPlugin({
