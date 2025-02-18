@@ -11,4 +11,9 @@ body {
   &.dictionary {
     background-color: #1e1e1e;
   }
+
+  &.dark {
+    background-color: #1e1e1e;
+    color: white;
+  }
 }
