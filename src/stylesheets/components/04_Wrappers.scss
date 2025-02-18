@@ -1,0 +1,11 @@
+.W_FlipCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 0.8s;
+  transform-style: preserve-3d;
+
+  &.rotate {
+    transform: rotateY(180deg);
+  }
+}

@@ -153,7 +153,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/functions.html',
       filename: './functions.html',
-      chunks: ['functions']
+      chunks: ['index', 'functions']
     }),
 
     // Тесты

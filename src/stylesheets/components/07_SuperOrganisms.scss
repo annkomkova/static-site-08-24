@@ -17,3 +17,11 @@ _____________________________________________________________
   grid-template-columns: repeat(3, 1fr);
   align-content: center; */
 }
+
+.S_FlipCards {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

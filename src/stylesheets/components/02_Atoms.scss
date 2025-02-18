@@ -36,3 +36,27 @@ _____________________________________________________________
   border-radius: 8px;
   padding: 10px 12px;
 }
+.A_PopUpButton {
+  width: 14vw;
+  height: 7vw;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 2rem;
+  text-align: center;
+  line-height: 7vw;
+  margin: 30px;
+  cursor: pointer;
+}
+.A_PopUpText {
+  text-align: center;
+}
+.A_PopUpTitle,
+.A_FlipCardTitle {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.A_PopUpImage,
+.A_FlipCardImage {
+  width: 100%;
+}
