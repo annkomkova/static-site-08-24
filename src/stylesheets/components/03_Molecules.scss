@@ -66,3 +66,37 @@
     }
   }
 }
+
+/* мультиселект */
+.M_SelectField {
+  display: none;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding: 1rem 0 0.5rem 0;
+  border: 2px solid #9cbed0;
+  outline-color: #7db2cf;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: #fff;
+  max-height: 10rem;
+
+  &[multiple] {
+    overflow-y: auto;
+  }
+
+  option {
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    color: rgb(82, 82, 82);
+
+    &:hover {
+      background-color: #eee;
+      color: white;
+    }
+    &:checked {
+      background-color: #7db2cf;
+      color: white;
+    }
+  }
+}

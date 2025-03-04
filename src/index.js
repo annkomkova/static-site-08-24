@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwitch()
   switchTheme()
 })
-const toggleSwitch = document.querySelector('input[type=checkbox]')
+const toggleSwitch = document.querySelector('.A_Checkbox')
 
 function initSwitch() {
   toggleSwitch.addEventListener('change', () => {
