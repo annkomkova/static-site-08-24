@@ -137,47 +137,32 @@ var api = init(defaultConverter, { path: '/' });
 
 
 
-;// CONCATENATED MODULE: ./src/javascripts/functions.js
+;// CONCATENATED MODULE: ./src/index.js
+
 
 document.addEventListener('DOMContentLoaded', function () {
-  initPopUp();
-  rotateFlipCard();
-  // initSwitch()
+  initSwitch();
+  switchTheme();
 });
+var toggleSwitch = document.querySelector('.A_Checkbox');
 function initSwitch() {
-  var toggleSwitch = document.querySelector('input[type=checkbox]');
-  var body = document.querySelector('body');
   toggleSwitch.addEventListener('change', function () {
     if (toggleSwitch.checked) {
-      Cookies.set('theme', 'dark');
+      api.set('theme', 'dark');
     } else {
-      Cookies.remove('theme');
+      api.remove('theme');
     }
-    if (Cookies.get('theme') == 'dark') {
-      body.classList.add('dark');
-      toggleSwitch.checked = true;
-    } else {
-      body.classList.remove('dark');
-    }
+    switchTheme();
   });
 }
-function initPopUp() {
-  var button = document.querySelector('.A_PopUpButton');
-  var popup = document.querySelector('.O_PopUpContainer');
-  button.addEventListener('click', function () {
-    popup.classList.add('visible');
-  });
-  popup.addEventListener('click', function () {
-    popup.classList.remove('visible');
-  });
-}
-function rotateFlipCard() {
-  var cards = document.querySelectorAll('.W_FlipCard');
-  cards.forEach(function (card) {
-    card.addEventListener('click', function () {
-      card.classList.toggle('rotate');
-    });
-  });
+function switchTheme() {
+  var body = document.querySelector('body');
+  if (api.get('theme') == 'dark') {
+    body.classList.add('dark');
+    toggleSwitch.checked = true;
+  } else {
+    body.classList.remove('dark');
+  }
 }
 /******/ })()
 ;

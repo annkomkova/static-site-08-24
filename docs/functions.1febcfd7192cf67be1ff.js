@@ -137,32 +137,86 @@ var api = init(defaultConverter, { path: '/' });
 
 
 
-;// CONCATENATED MODULE: ./src/index.js
-
+;// CONCATENATED MODULE: ./src/javascripts/functions.js
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  initSwitch();
-  switchTheme();
+  initPopUp();
+  rotateFlipCard();
+  // initSwitch()
+  initMultiselect();
 });
-var toggleSwitch = document.querySelector('input[type=checkbox]');
-function initSwitch() {
-  toggleSwitch.addEventListener('change', function () {
-    if (toggleSwitch.checked) {
-      api.set('theme', 'dark');
-    } else {
-      api.remove('theme');
+function initMultiselect() {
+  var label = document.querySelector('.C_Chips');
+  var select = document.querySelector('.M_SelectField');
+  var text = label.innerHTML;
+  select.addEventListener('change', function () {
+    var selectedOptions = this.selectedOptions;
+    label.innerHTML = '';
+    var _iterator = _createForOfIteratorHelper(selectedOptions),
+      _step;
+    try {
+      var _loop = function _loop() {
+        var option = _step.value;
+        var button = document.createElement('button');
+        button.classList.add('A_Chip');
+        button.type = 'button';
+        button.textContent = option.value;
+        button.addEventListener('click', function () {
+          option.selected = false;
+          button.remove();
+          if (!select.selectedOptions.length) {
+            label.innerHTML = text;
+          }
+        });
+        label.appendChild(button);
+      };
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        _loop();
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
     }
-    switchTheme();
   });
 }
-function switchTheme() {
+function initSwitch() {
+  var toggleSwitch = document.querySelector('input[type=checkbox]');
   var body = document.querySelector('body');
-  if (api.get('theme') == 'dark') {
-    body.classList.add('dark');
-    toggleSwitch.checked = true;
-  } else {
-    body.classList.remove('dark');
-  }
+  toggleSwitch.addEventListener('change', function () {
+    if (toggleSwitch.checked) {
+      Cookies.set('theme', 'dark');
+    } else {
+      Cookies.remove('theme');
+    }
+    if (Cookies.get('theme') == 'dark') {
+      body.classList.add('dark');
+      toggleSwitch.checked = true;
+    } else {
+      body.classList.remove('dark');
+    }
+  });
+}
+function initPopUp() {
+  var button = document.querySelector('.A_PopUpButton');
+  var popup = document.querySelector('.O_PopUpContainer');
+  button.addEventListener('click', function () {
+    popup.classList.add('visible');
+  });
+  popup.addEventListener('click', function () {
+    popup.classList.remove('visible');
+  });
+}
+function rotateFlipCard() {
+  var cards = document.querySelectorAll('.W_FlipCard');
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      card.classList.toggle('rotate');
+    });
+  });
 }
 /******/ })()
 ;
