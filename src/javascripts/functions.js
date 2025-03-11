@@ -4,7 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initPopUp()
   rotateFlipCard()
   // initSwitch()
+  initMultiselect()
 })
+
+function initMultiselect() {
+  const label = document.querySelector('.C_Chips')
+  const select = document.querySelector('.M_SelectField')
+  const text = label.innerHTML
+
+  select.addEventListener('change', function () {
+    let selectedOptions = this.selectedOptions
+    label.innerHTML = ''
+
+    for (let option of selectedOptions) {
+      let button = document.createElement('button')
+      button.classList.add('A_Chip')
+      button.type = 'button'
+      button.textContent = option.value
+
+      button.addEventListener('click', () => {
+        option.selected = false
+        button.remove()
+
+        if (!select.selectedOptions.length) {
+          label.innerHTML = text
+        }
+      })
+
+      label.appendChild(button)
+    }
+  })
+}
 
 function initSwitch() {
   const toggleSwitch = document.querySelector('input[type=checkbox]')

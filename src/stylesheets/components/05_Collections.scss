@@ -17,3 +17,38 @@ _____________________________________________________________
     margin-right: 10px;
   }
 }
+
+/* мультиселект */
+.C_Chips {
+  width: 100%;
+  display: block;
+  border-radius: 1rem;
+  min-height: 2.5rem;
+  padding: 1rem;
+  position: relative;
+  color: rgb(82, 82, 82);
+  font-size: 1rem;
+  border: 2px solid #9cbed0;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  &:hover {
+    border: 2px solid #7db2cf;
+  }
+  &:active {
+    border: 2px solid cornflowerblue;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.8rem;
+    right: 0.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url('https://img.icons8.com/material-rounded/48/delete-sign.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
