@@ -16,7 +16,8 @@ module.exports = {
     dictionary: './src/dictionary/dictionary.js',
     jsBasic: './src/js-basic/js-basic.js',
     tests: './src/tests/test1.js',
-    functions: './src/javascripts/functions.js'
+    functions: './src/javascripts/functions.js',
+    filterTags: './src/javascripts/filterTags.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -107,7 +108,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/articles.html',
       filename: './articles.html',
-      chunks: ['index', 'swiper']
+      chunks: ['index', 'swiper', 'filterTags']
     }),
     new HtmlWebpackPlugin({
       template: './src/boardgames.html',
