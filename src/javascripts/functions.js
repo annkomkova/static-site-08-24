@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPopUp()
   rotateFlipCard()
   // initSwitch()
-  initMultiselect()
+  // initMultiselect()
 })
 
 function initMultiselect() {
