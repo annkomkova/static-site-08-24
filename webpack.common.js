@@ -18,7 +18,8 @@ module.exports = {
     tests: './src/tests/test1.js',
     functions: './src/javascripts/functions.js',
     filterTags: './src/javascripts/filterTags.js',
-    searchVanilla: './src/javascripts/search-vanilla.js'
+    searchVanilla: './src/javascripts/search-vanilla.js',
+    reactBasics: './src/javascripts/react-basics.jsx'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -169,6 +170,11 @@ module.exports = {
       template: './src/search.html',
       filename: './search.html',
       chunks: ['index', 'searchVanilla']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/react-basics.html',
+      filename: './react-basics.html',
+      chunks: ['reactBasics']
     }),
 
     new CopyPlugin({
