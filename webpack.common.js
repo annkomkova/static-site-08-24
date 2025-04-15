@@ -19,7 +19,8 @@ module.exports = {
     functions: './src/javascripts/functions.js',
     filterTags: './src/javascripts/filterTags.js',
     searchVanilla: './src/javascripts/search-vanilla.js',
-    reactBasics: './src/javascripts/react-basics.jsx'
+    reactBasics: './src/javascripts/react-basics.jsx',
+    articleContent: './src/javascripts/articleContent.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -122,7 +123,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/articles/about-games.html',
       filename: './articles/about-games.html',
-      chunks: ['index']
+      chunks: ['index', 'articleContent']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/articles/eclipse.html',
+      filename: './articles/eclipse.html',
+      chunks: ['index', 'articleContent']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/articles/era-konana.html',
+      filename: './articles/era-konana.html',
+      chunks: ['index', 'articleContent']
     }),
 
     // Публикации в разделе "Игры" (boardgames)
