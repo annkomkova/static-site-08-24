@@ -18,19 +18,13 @@ const workshops = [
   }
 ]
 
-export default class O_Container extends React.Component {
-  render() {
-    const cards = workshops.map((workshop, i) => {
-      return (
+export default function O_Container() {
+  return (
+    <div className="O_Container">
+      <A_Title name="Расписание" />
+      {workshops.map((workshop, i) => (
         <M_Card key={i} name={workshop.title} description={workshop.date} />
-      )
-    })
-
-    return (
-      <div className="O_Container">
-        <A_Title name="Расписание" />
-        {cards}
-      </div>
-    )
-  }
+      ))}
+    </div>
+  )
 }
