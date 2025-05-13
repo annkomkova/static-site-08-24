@@ -141,23 +141,23 @@ var api = init(defaultConverter, { path: '/' });
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  initSwitch();
-  switchTheme();
+  // initSwitch()
+  // switchTheme()
 });
 var toggleSwitch = document.querySelector('.A_Checkbox');
 function initSwitch() {
   toggleSwitch.addEventListener('change', function () {
     if (toggleSwitch.checked) {
-      api.set('theme', 'dark');
+      Cookies.set('theme', 'dark');
     } else {
-      api.remove('theme');
+      Cookies.remove('theme');
     }
     switchTheme();
   });
 }
 function switchTheme() {
   var body = document.querySelector('body');
-  if (api.get('theme') == 'dark') {
+  if (Cookies.get('theme') == 'dark') {
     body.classList.add('dark');
     toggleSwitch.checked = true;
   } else {

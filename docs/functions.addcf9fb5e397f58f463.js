@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initPopUp();
   rotateFlipCard();
   // initSwitch()
-  initMultiselect();
+  // initMultiselect()
 });
 function initMultiselect() {
   var label = document.querySelector('.C_Chips');
