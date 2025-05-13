@@ -17,7 +17,10 @@ module.exports = {
     jsBasic: './src/js-basic/js-basic.js',
     tests: './src/tests/test1.js',
     functions: './src/javascripts/functions.js',
-    filterTags: './src/javascripts/filterTags.js'
+    filterTags: './src/javascripts/filterTags.js',
+    searchVanilla: './src/javascripts/search-vanilla.js',
+    reactBasics: './src/javascripts/react-basics.jsx',
+    articleContent: './src/javascripts/articleContent.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -120,7 +123,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/articles/about-games.html',
       filename: './articles/about-games.html',
-      chunks: ['index']
+      chunks: ['index', 'articleContent']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/articles/eclipse.html',
+      filename: './articles/eclipse.html',
+      chunks: ['index', 'articleContent']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/articles/era-konana.html',
+      filename: './articles/era-konana.html',
+      chunks: ['index', 'articleContent']
     }),
 
     // Публикации в разделе "Игры" (boardgames)
@@ -164,6 +177,17 @@ module.exports = {
       chunks: ['tests']
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/search.html',
+      filename: './search.html',
+      chunks: ['index', 'searchVanilla']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/react-basics.html',
+      filename: './react-basics.html',
+      chunks: ['reactBasics']
+    }),
+
     new CopyPlugin({
       patterns: [
         {
@@ -188,6 +212,14 @@ module.exports = {
       {
         path: path.join(__dirname, './src/partials/footer.html'),
         location: 'footerPartial',
+        template_filename: '*',
+        priority: 'replace'
+      }
+    ]),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './src/partials/analytics.html'),
+        location: 'analytics',
         template_filename: '*',
         priority: 'replace'
       }
