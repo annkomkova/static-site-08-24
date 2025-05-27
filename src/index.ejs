@@ -1,3 +1,4 @@
+<% const { menubar } = require('./javascripts/menubar.js') %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,9 +50,10 @@
     <analytics></analytics>
   </head>
   <body class="index">
-    <nav>
+    <nav class="S_MenuBar"><%= menubar %></nav>
+    <!-- <nav>
       <a href="about.html">О проекте</a>
-    </nav>
+    </nav> -->
     <div class="main">
       <div class="mainInfo">
         <h1>Каждая игра — это новая история. Погрузись в свою</h1>

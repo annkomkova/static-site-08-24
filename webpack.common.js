@@ -39,7 +39,8 @@ module.exports = {
     filterTags: './src/javascripts/filterTags.js',
     searchVanilla: './src/javascripts/search-vanilla.js',
     reactBasics: './src/javascripts/react-basics.jsx',
-    articleContent: './src/javascripts/articleContent.js'
+    articleContent: './src/javascripts/articleContent.js',
+    menubar: './src/javascripts/menubar.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -121,21 +122,26 @@ module.exports = {
 
     // Index
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/index.ejs',
       filename: './index.html',
-      chunks: ['index', 'dices']
+      chunks: ['index', 'menubar']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/styleguide.ejs',
+      filename: './styleguide.html',
+      chunks: ['index', 'menubar']
     }),
 
     // Страницы разделов
     new HtmlWebpackPlugin({
-      template: './src/articles.html',
+      template: './src/articles.ejs',
       filename: './articles.html',
-      chunks: ['index', 'swiper', 'filterTags']
+      chunks: ['index', 'swiper', 'filterTags', 'menubar']
     }),
     new HtmlWebpackPlugin({
-      template: './src/boardgames.html',
+      template: './src/boardgames.ejs',
       filename: './boardgames.html',
-      chunks: ['index']
+      chunks: ['index', 'menubar']
     }),
 
     // Публикации в разделе "Статьи" (articles)
@@ -197,9 +203,9 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: './src/search.html',
+      template: './src/search.ejs',
       filename: './search.html',
-      chunks: ['index', 'searchVanilla']
+      chunks: ['index', 'searchVanilla', 'menubar']
     }),
     new HtmlWebpackPlugin({
       template: './src/react-basics.html',
