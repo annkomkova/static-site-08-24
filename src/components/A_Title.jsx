@@ -1,23 +1,20 @@
 import React from 'react'
 
-const user = {
-  name: 'Anna',
-  age: 27,
-  pet: 'cat'
-}
-
+// //классовый компонент
 // export default class A_Title extends React.Component {
 //   render() {
-//     return <h1 className="A_Title"> {this.props.name} </h1>
+//     return <h2 className="A_Title">{this.props.name}</h2>
 //   }
 // }
 
-export default function A_Title({ name }) {
-  return <h1 className="A_Title">{name}</h1>
+// //функциональный компонент классический
+// export default function A_Title({ name }) {
+//   return <h2 className="A_Title">{name}</h2>
+// }
+
+// //функциональный компонент через стрелочную функцию
+const A_Title = ({ name }) => {
+  return <h2 className="A_Title">{name}</h2>
 }
 
-// const A_Title = ({ name }) => (
-//   <h1 className="A_Title">{name}</h1>
-// );
-
-// export default A_Title;
+export default A_Title
